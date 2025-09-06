@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KDAG — Quick Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="weblogo.png"  style="width: fit-content;" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+  <video id="bg-video" autoplay loop muted>
+    <source src="bgvedio.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  
+    <header class="topbar">
+    <div class="logo">
+      <img src="logo.png" alt="KDAG logo"/>
+    </div>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <nav class="navbar" id="navMenu">
+      <a href="https://www.kdagiitkgp.com/events" target="_blank">Events</a>
+      <a href="https://www.kdagiitkgp.com/gallery" target="_blank">Gallery</a>
+      <a href="https://www.kdagiitkgp.com/mlsheet" target="_blank">ML Sheet</a>
+      <a href="https://www.kdagiitkgp.com/resources" target="_blank">Resources</a>
+      <a href="https://www.kdagiitkgp.com/blog" target="_blank">Blog</a>
+      <a href="https://www.kdagiitkgp.com/team" target="_blank">Team</a>
+      <a href="INDEX.HTML">Demo Quiz</a>
+      <a href="https://www.kdagiitkgp.com/forum"><img src="message.png" alt="forum"></a>
+      <a href="https://www.kdagiitkgp.com/auth"><img src="contacts.png" alt="authentication"></a>
+    </nav>
+  </header>
+
+
+    <main class="card">
+        <div class="header">
+            KDAG Quiz
+            </div>
+      <div class="meta">
+        <div class="muted">Attempts: <span id="attempts">0</span></div>
+        <div class="muted">Best score: <span id="best">0</span></div>
+        <div class="muted">Last score: <span id="last">-</span></div>
+      </div>
+
+      <form id="quizForm">
+
+        <div class="q" data-q="0">
+          <h3>1. What does KDAG stand for?</h3>
+          <div class="opts">
+            <label><input type="radio" name="q0" value="a"> Kharagpur Data Analytics Group</label>
+            <label><input type="radio" name="q0" value="b"> Kinetic Data And Graphs</label>
+            <label><input type="radio" name="q0" value="c"> Knowledge Development Association of Geeks</label>
+            <label><input type="radio" name="q0" value="d"> Kharagpur Department of Applied Geometry</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="1">
+          <h3>2. KDAG is based at which institute?</h3>
+          <div class="opts">
+            <label><input type="radio" name="q1" value="a"> IIT Kharagpur</label>
+            <label><input type="radio" name="q1" value="b"> IISc Bangalore</label>
+            <label><input type="radio" name="q1" value="c"> IIIT Hyderabad</label>
+            <label><input type="radio" name="q1" value="d"> IIT Bombay</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="2">
+          <h3>3. Which flagship event is organized by KDAG (mentioned on the site)?</h3>
+          <div class="opts">
+            <label><input type="radio" name="q2" value="a"> Kharagpur Data Science Hackathon</label>
+            <label><input type="radio" name="q2" value="b"> Kharagpur Coding Marathon</label>
+            <label><input type="radio" name="q2" value="c"> KGP AI Summit</label>
+            <label><input type="radio" name="q2" value="d"> DataViz Fest</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="3">
+          <h3>4. KDAG primarily focuses on which domains?</h3>
+          <div class="opts">
+            <label><input type="radio" name="q3" value="a"> Data Analytics, Machine Learning, AI</label>
+            <label><input type="radio" name="q3" value="b"> Mechanical Engineering</label>
+            <label><input type="radio" name="q3" value="c"> Civil Infrastructure</label>
+            <label><input type="radio" name="q3" value="d"> Organic Chemistry</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="4">
+          <h3>5. KDAG offers which of the following on their website?</h3>
+          <div class="opts">
+            <label><input type="radio" name="q4" value="a"> Resources and blog posts</label>
+            <label><input type="radio" name="q4" value="b"> Cooking recipes</label>
+            <label><input type="radio" name="q4" value="c"> Flight booking</label>
+            <label><input type="radio" name="q4" value="d"> Movie reviews</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="5">
+          <h3>6. The KDAG site mentions a preparation resource called 'Think Tank'—it contains puzzles in which topics?</h3>
+          <div class="opts">
+            <label><input type="radio" name="q5" value="a"> Probability and logic puzzles</label>
+            <label><input type="radio" name="q5" value="b"> Organic synthesis puzzles</label>
+            <label><input type="radio" name="q5" value="c"> Cooking puzzles</label>
+            <label><input type="radio" name="q5" value="d"> Sports trivia</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="6">
+          <h3>7. KDAG lists a 'Resources' section—what would you find there?</h3>
+          <div class="opts">
+            <label><input type="radio" name="q6" value="a"> Curated ML/DS learning modules and interview prep</label>
+            <label><input type="radio" name="q6" value="b"> Car repair manuals</label>
+            <label><input type="radio" name="q6" value="c"> Gardening tips</label>
+            <label><input type="radio" name="q6" value="d"> Real estate listings</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="7">
+          <h3>8. KDAG's team page shows: which of these is true?</h3>
+          <div class="opts">
+            <label><input type="radio" name="q7" value="a"> It lists student leads and advisors</label>
+            <label><input type="radio" name="q7" value="b"> It only shows corporate sponsors</label>
+            <label><input type="radio" name="q7" value="c"> It displays daily weather</label>
+            <label><input type="radio" name="q7" value="d"> It sells merchandise only</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="8">
+          <h3>9. KDAG collaborates with which of these for events or courses (example seen online)?</h3>
+          <div class="opts">
+            <label><input type="radio" name="q8" value="a"> Pathway (realtime LLM course)</label>
+            <label><input type="radio" name="q8" value="b"> FIFA</label>
+            <label><input type="radio" name="q8" value="c"> The Louvre</label>
+            <label><input type="radio" name="q8" value="d"> SpaceX</label>
+          </div>
+        </div>
+
+        <div class="q" data-q="9">
+          <h3>10. The KDAG hackathon prize pool (as advertised) is approximately:</h3>
+          <div class="opts">
+            <label><input type="radio" name="q9" value="a"> ₹2.5 Lakh</label>
+            <label><input type="radio" name="q9" value="b"> ₹10</label>
+            <label><input type="radio" name="q9" value="c"> ₹1 Crore</label>
+            <label><input type="radio" name="q9" value="d"> Free snacks only</label>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button type="button" id="prevBtn">Previous</button>
+          <button type="button" id="nextBtn">Next</button>
+          <button type="button" id="submitBtn">Submit & Show Solutions</button>
+          <button type="button" id="resetBtn">Reset Answers</button>
+        </div>
+
+        <div class="result card" id="resultCard">
+          <h3>Your score: <span id="scoreOut">0</span>/10</h3>
+          <p class="muted">You chose: <span id="chosenSummary">—</span></p>
+
+          <div id="solutionsArea">
+            <!-- Solutions inserted here -->
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <footer class="muted">This website is made by Suvam 25MF10064 in  Collaboration with KDAG IIT KGP.
+        @copyright KDAG 2025
+    </footer>
+
+  
+</body>
+</html>

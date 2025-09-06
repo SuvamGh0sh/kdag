@@ -1,0 +1,238 @@
+/* --- Variables & Imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #06b6d4;
+  --muted: #94a3b8;
+}
+
+/* --- Global Styles --- */
+* {
+  box-sizing: border-box;
+}
+.header{
+    font-size:30px;
+    font-weight:800;
+    text-align:center;
+    margin-bottom:20px;
+}
+/* --- Background Video --- */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+}
+nav a img{
+  width: 30px;
+  height: 30px;
+}
+
+/* --- Main Layout --- */
+body {
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+  margin: 0;
+  color: #e6eef6;
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* --- Topbar & Navigation --- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: #000;
+  border-bottom: 1px solid #27272a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo img {
+  width: 240px;
+  height: 40px;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  margin-left: auto;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  padding: 0 0;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: coral;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  background-color: coral;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* --- Card Layout --- */
+.card {
+  background: rgba(15, 23, 36, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* --- Quiz Elements --- */
+form .q {
+  display: none;
+  margin-bottom: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.q h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.opts label {
+  display: block;
+  margin: 6px 0;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.opts label:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+input[type=radio] {
+  margin-right: 10px;
+}
+
+/* --- Controls & Results --- */
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20px;
+}
+
+button {
+  background: var(--accent);
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #021018;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background: #0891b2;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.result {
+  display: none;
+  margin-top: 12px;
+}
+
+.solution {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .navbar.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width:600px) {
+  body {
+    padding: 12px
+  }
+}
